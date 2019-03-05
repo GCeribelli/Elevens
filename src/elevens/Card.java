@@ -22,8 +22,8 @@ public class Card
             face = f;
         }
         
-        public String getFace(){
-            return FACES[face];
+        public int getFace(){
+            return face;
         }
         public String getSuit(){
             return suit;

@@ -17,7 +17,15 @@ public class Deck{
 	private List<Card> cards;
 	private int top;
 
-   //make a Deck constructor
+        public Deck(){
+            cards = new ArrayList<Card>(52);
+            for(int i = 0; i < SUITS.length; i++){
+                for(int n = 1; n <= 13; n++){
+                     cards.add(new BlackJackCard(SUITS[i], n));
+                }
+            }
+        }
+//make a Deck constructor
    	//refer cards to new ArrayList
    	//set top to the top of the deck 51
    	
@@ -27,7 +35,17 @@ public class Deck{
 
    
    //make a dealCard() method that returns the top card
-   
+   public String dealCard(){
+       String a;
+            a = cards.get(0).toString();
+       cards.add(cards.get(0));
+       cards.remove(0);
+       return a;
+   }
+   public void shuffle(){
+       Collections.shuffle(cards);
+       //top = cards.get(0).toString();
+   }
    //write a shuffle() method
    	//use Colletions.shuffle
    	//reset the top card 

@@ -12,6 +12,7 @@ public class BlackJackCard extends Card
   	}
 
   	//accessors
+      
 	public int getValue()
 	{
 		if( getFace() == 1 )
