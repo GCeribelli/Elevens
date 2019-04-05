@@ -8,17 +8,26 @@ package Blackjack;
 
 public class BlackJackCard extends Card
 {
-  	//constructors
-
+  	//constructorspublic 
+        BlackJackCard(int f, String s){
+            super(f,s);
+        }
+        public BlackJackCard(){
+            super();
+        }
+        
 
 
   	public int getValue()
   	{
   		//enables you to build the value for the game into the card
   		//this makes writing the whole program a little easier
-
-
-		return 0;
+                int val = 0;
+                if(face() <= 10)
+                    val = face();
+                else
+                    val = 10;
+		return val;
   	}
   	
  }

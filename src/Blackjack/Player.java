@@ -7,20 +7,18 @@ package Blackjack;
 //Lab  - 
 
 import static java.lang.System.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 
-//define Player class here 
+public class Player extends AbstractPlayer{
 
+        public Player(){
+            super();
+        }
 
-
-
-	//constructors
-
-
-
-
-
-	//hit method goes here
-
+        public boolean hit(){
+            return true;
+        }
+}

@@ -5,36 +5,31 @@ package Blackjack;
 //Date -
 //Class -
 //Lab  - 
+import static java.lang.System.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
+
+
+public class Dealer extends AbstractPlayer{
 
 //define Dealer class here
 	
 	
 	
-	
+	Deck deck = new Deck();
 	//instance variable - Deck 
+        public Dealer(){ super();}
 
+        public void shuffle(){
+            deck.shuffle();
+        }
 
+        public Card deal(){
+            return deck.nextCard();
+        }
 
-
-
-	//constructors
-
-
-
-
-
-	//method to shuffle
-
-
-
-
-
-
-	//method to deal a card
-
-
-
-
-
-	//hit method goes here
+        public boolean hit(){
+            return true;
+        }   
+}

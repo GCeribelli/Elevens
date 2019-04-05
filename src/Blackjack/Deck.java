@@ -22,36 +22,43 @@ public class Deck
 
 	public Deck ()
 	{
-		//initialize data - stackOfCards - topCardIndex
-		
-		
-		//loop through suits
-			//loop through faces
-				//add in a new card
+		stackOfCards = new ArrayList<Card>(52);
+                for(int i = 0; i < SUITS.length; i++){
+                for(int n = 1; n <= 13; n++){
+                     stackOfCards.add(new BlackJackCard(n, SUITS[i]));
+                }
+                setTCI(size());
+            }
 		
 	}
 
 	//modifiers
-   public void shuffle ()
+        public void setTCI(int i){
+            topCardIndex = i;
+        }public int getTCI(){
+            return topCardIndex;
+        }
+        public void shuffle ()
 	{
-		//shuffle the deck
-		//reset variables as needed
+		Collections.shuffle(stackOfCards);
+                setTCI(size());
 	}
 
    //accessors
 	public int  size ()
 	{
-		return 0;
+		return stackOfCards.size();
 	}
 
 	public int numCardsLeft()
 	{
-		return 0;
+		return getTCI();
 	}
 
 	public Card nextCard()
 	{
-		return stackOfCards.get(topCardIndex--);
+                setTCI(topCardIndex-1);
+		return stackOfCards.get(getTCI());
 	}
 
 	public String toString()
